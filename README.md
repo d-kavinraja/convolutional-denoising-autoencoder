@@ -6,25 +6,23 @@ To develop a convolutional autoencoder for image denoising application.
 
 ### PROBLEM STATEMENT:
 
-Image Denoising is the process of removing noise from the Images. The noise present in the images may be caused by various intrinsic or extrinsic conditions which are practically hard to deal with. The problem of Image Denoising is a very fundamental challenge in the domain of Image processing and Computer vision. Therefore, it plays an important role in a wide variety of domains where getting the original image is really important for robust performance.
+Image Denoising is the process of removing noise from the Images. The noise present in the images may be caused by various intrinsic or extrinsic conditions which are practically hard to deal with. 
 
 Modeling image data requires a special approach in the neural network world. The best-known neural network for modeling image data is the Convolutional Neural Network (CNN).
-It can better retain the connected information between the pixels of an image. The particular design of the layers in a CNN makes it a better choice to process image data.
 
-The CNN design can be used for image recognition/classification, or be used for image noise reduction or coloring. We can train the CNN model by taking many image samples as the inputs and labels as the outputs. We then use this trained CNN model to a new image to recognize if it is a “dog”, or “cat”, etc. CNN also can be used as an autoencoder for image noise reduction or coloring.
+The CNN design can be used for image recognition/classification, or be used for image noise reduction or coloring. 
 
 This program demonstrates how to implement a deep convolutional autoencoder for image denoising, mapping noisy digits images from the MNIST dataset to clean digits images.
-The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used for training various image processing systems. The training dataset in Keras has 60,000 records and the test dataset has 10,000 records. Each record has 28 x 28 pixels.
 
 ### DATASET:
 
-![img1](https://user-images.githubusercontent.com/93427534/202606749-39e6786e-48f8-4469-b741-c1e8e3583191.png)
+![output](./images/dataset.png)
 
 ### CONVOLUTIONAL AUTOENCODER NEURAL NETWORK MODEL:
 
 ![img2](https://user-images.githubusercontent.com/93427534/202607417-080ebc32-7682-4ca9-a675-86ab54b3aca6.png)
 
-![img3](https://user-images.githubusercontent.com/93427534/202608426-1a2dfc36-9810-4fd4-9ea0-f1b794aa706c.png)
+![output](./images/model.png)
 
 ### DESIGN STEPS:
 
@@ -60,7 +58,7 @@ End the program.
 
 ```python
 ## Developed : Kavinraja D
- ## Reg : 212222240047
+## Reg : 212222240047
 Program to develop a convolutional autoencoder for image denoising application.
 
 from tensorflow import keras
@@ -117,10 +115,6 @@ a = layers.MaxPooling2D((2, 2), padding='same')(a)
 a = layers.Conv2D(8,(5,5),activation='relu',padding='same')(a)
 
 encoded = layers.MaxPooling2D((2, 2), padding='same')(a)
-
-# Encoder output dimension is ## Mention the dimention ##
-
-# Write your decoder here
 
 a=layers.Conv2D(16,(3,3),activation='relu',padding='same')(encoded)
 
@@ -187,14 +181,16 @@ plt.show()
 ### OUTPUT:
 
 ### ADDING NOISE TO THE MNIST DATASET:
-
+![output](./images/noise_output.png)
 
 
 ### AUTOENCODER.SUMMARY():
 
-
+![output](./images/summary.png)
 
 ### ORIGINAL V/S NOISY V/S RECONSTRUCTED IMAGE:
+
+![output](./images/output.png)
 
 
 
