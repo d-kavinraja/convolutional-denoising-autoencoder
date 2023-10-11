@@ -178,7 +178,7 @@ plt.show()
 
 ```
 
-### OUTPUT:
+# OUTPUT:
 
 ### ADDING NOISE TO THE MNIST DATASET:
 ![output](./images/noise_output.png)
